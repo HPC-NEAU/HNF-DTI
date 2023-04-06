@@ -18,17 +18,11 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
 
 ###############################################################
 # Training settings
-
-
 parser = argparse.ArgumentParser(description='DTI-GRAPH')
-
-parser.add_argument('--dropout', type=float, default=0.3,  #default=0.3
+parser.add_argument('--dropout', type=float, default=0.3, 
                  help='Dropout rate (1 - keep probability).')
-
-parser.add_argument('--gat_nheads', type=int, default=6, #default=8
+parser.add_argument('--gat_nheads', type=int, default=6, 
                     help='GAT layers')
-
-
 parser.add_argument('--no-cuda', action='store_true', default=False,
                     help='Disables CUDA training.')
 parser.add_argument('--seed', type=int, default=223, help='Random seed.')
@@ -38,11 +32,8 @@ parser.add_argument('--lr', type=float, default=0.0005,
                     help='Initial learning rate.')
 parser.add_argument('--weight_decay', type=float, default=5e-3,
                     help='Weight decay (L2 loss on parameters).')
-
-
 parser.add_argument('--if_save', type=bool, default=True,
                     help='Weight decay (L2 loss on parameters).')
-
 ###############################################################
 # Model hyper setting
 # Protein_NN
@@ -55,7 +46,7 @@ parser.add_argument('--pnn_nhid', type=str, default='[]',
 # Drug_NN
 parser.add_argument('--drug_ninput', type=int, default=881,
                     help='Drug fingerprint dimension')
-parser.add_argument('--dnn_nlayers', type=int, default=1, #default=1
+parser.add_argument('--dnn_nlayers', type=int, default=1,
                     help='dnn_nlayers num')
 parser.add_argument('--dnn_nhid', type=str, default='[]',
                     help='dnn hidden layer dim, like [200,100] for tow hidden layers')
@@ -68,10 +59,6 @@ parser.add_argument('--gat_nhid', type=int, default=256,
                     help='hidden dim of gat')
 parser.add_argument('--gat_noutput', type=int, default=256,
                     help='GAT output feature dim and the input dim of Decoder')
-
-
-
-
 parser.add_argument('--gat_negative_slope', type=float, default=0.2,
                     help='GAT LeakyReLU angle of the negative slope.')
 # Decoder
@@ -81,15 +68,11 @@ parser.add_argument('--DTI_nn_nhid', type=str, default='[256,256,256]',   #defau
                     help='DTI_nn hidden layer dim, like [200,100] for tow hidden layers')
 ###############################################################
 # data
-
-# parser.add_argument('--model_dir', type=str, default='./save_nuc_receptor_model_com3',#default='./save_enzyme_model_com3'
-#                     help='model save path')
 parser.add_argument('--crossvalidation', type=int, default=1,
                     help='whether use crossvalidation or not')
-
 parser.add_argument('--dataset', type=str, default='cross_reverse', 
                     help='dataset name')
-parser.add_argument('--common_neighbor', type=int, default=3, #default=1
+parser.add_argument('--common_neighbor', type=int, default=3, 
                     help='common neighbor of adj transform, this will determine what preprocessed matrix you use')
 parser.add_argument('--sample_num', type=int, default=300,
                     help='different epoch use different sample, the sample num')
@@ -101,8 +84,6 @@ np.random.seed(args.seed)
 torch.manual_seed(args.seed)
 if args.cuda:
     torch.cuda.manual_seed(args.seed)
-
-
 
 args.model_dir='./saved_model/save_{}_model_com3'.format(args.dataset)
     
@@ -236,7 +217,6 @@ for train_times in range(fold_num):
         print("All Test Score:", acc_score)
     save_model_path = os.path.join(args.model_dir,str(train_times),args.dataset+'_com_3_times_'+str(train_times)+'_'+str(round(best_test, 4))+'.pth.tar')
 
-    #保存模型和数据
 #   torch.save(model_dict, save_model_path)
 #    np.savetxt(save_predict_target_path, predict_target)
 
