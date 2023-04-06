@@ -70,7 +70,7 @@ parser.add_argument('--DTI_nn_nhid', type=str, default='[256,256,256]',   #defau
 # data
 parser.add_argument('--crossvalidation', type=int, default=1,
                     help='whether use crossvalidation or not')
-parser.add_argument('--dataset', type=str, default='cross_reverse', 
+parser.add_argument('--dataset', type=str, default='enzyme', 
                     help='dataset name')
 parser.add_argument('--common_neighbor', type=int, default=3, 
                     help='common neighbor of adj transform, this will determine what preprocessed matrix you use')
