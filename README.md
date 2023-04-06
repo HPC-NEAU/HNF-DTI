@@ -1,6 +1,6 @@
-# Drug-Target Interaction Prediction with Graph Attention networks.
+# HNF-DTI: Heterogeneous Network Framework for Drug-Target Interaction Prediction
 
-This repository provides the implementation of our paper: "[Drug-Target Interaction Prediction with Graph Attention networks]()," (Submitted to ECCB'20).
+This repository provides the implementation of our paper: "[HNF-DTI: Heterogeneous Network Framework for Drug-Target Interaction Prediction]" .
 
 <p align='center'>
     <img src="pipeline.png", width="640">
@@ -17,19 +17,19 @@ This repository provides the implementation of our paper: "[Drug-Target Interact
 
 ## Updates
 
-* Feb 2020: We update the code
+* Apr 2023: We update the code
 
 ## Experimental Datasets and Settings
 
-Please see the four datasets in [`data/`](data/) with detailed instructions.
+Please see the datasets in [`data/`](data/) with detailed instructions.
 
 
 ## General Instructions
 
 1. Configuration environment
-2. Prepare datasets for K-fold cross-validation following the designated JSON format as shown in the section of data preparation.
-2. Execute the model with corresponding hyperparameters and experimental settings.
-3. Done!
+2. Prepare datasets for K-fold cross-validation following the designated JSON format as shown in the section of data preparation, if you need.
+3. Set corresponding hyperparameter according to and conduct experiments.
+
 
 ## Configuration environment
 Pytorch-geometric official documentation "[installation](https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html)"
