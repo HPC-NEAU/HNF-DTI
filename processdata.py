@@ -213,8 +213,6 @@ def load_data(data_root, dataset='cross_reverse', start_epoch=0, end_epoch=2000,
     drug_data = data_file['drug_arr'] # n, 881
     int_label = data_file['int_ids'] # label num, 3
     
-    #train_ids = pd.read_excel('./data/data_reverse_test.xlsx')
-    #val_ids = pd.read_excel('./data/data_reverse_train.xlsx')
     
 
     if crossval:
@@ -367,7 +365,7 @@ def constr_adj(node_num, interact_index, neg_inter_index, protein_num, common_ne
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='cross_reverse', #default='enzyme'
+    parser.add_argument('--dataset', type=str, default='enzyme', 
                         help='dataset')
     parser.add_argument('--start_epoch', type=int, default=0,
                         help='epoch_num')
@@ -381,7 +379,7 @@ if __name__ == '__main__':
                         help='adj_norm')
     parser.add_argument('--data_root', type=str, default='./data',
                         help='data root')
-    parser.add_argument('--crossval', type=int, default=0,
+    parser.add_argument('--crossval', type=int, default=1,
                         help='whether generate 5 fold')
     args = parser.parse_args()
     random.seed(2)
