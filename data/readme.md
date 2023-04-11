@@ -2,7 +2,7 @@
 
 ### Benchmark Datasets
 
-The gold standard public benchmark dataset obtained from http://web.kuicr.kyoto-u.ac.jp/supp/yoshi/drugtarget/, which was built by Yamanishi et al [13].
+The gold standard public benchmark dataset obtained from http://web.kuicr.kyoto-u.ac.jp/supp/yoshi/drugtarget/, which was built by Yamanishi.
 
 The datasets have four categories of subsets Ion channels (IC), G-protein-coupled receptors (GPCR), Enzymes, and Nuclear receptors (NR).
 
