@@ -116,7 +116,7 @@ class DTI_Graph(nn.Module):
         self.LayerNorm = torch.nn.LayerNorm(GAT_hyper[0]).to('cuda:0')
         self.dropout = 0.2
         #protein linear
-        self.p_feature1=nn.Sequential(Encoder(64, 1, 128, 220, 1, [220, 1], n_layers=4, dropout=0.2, use_bias=False)).to('cuda:0')
+        self.p_feature1=nn.Sequential(Encoder(64, 1, 128, 220, 1, [220, 1], n_layers=6, dropout=0.2, use_bias=False)).to('cuda:0')
         self.p_feature2=nn.Sequential(
             nn.Linear(220,256),
             nn.ReLU(),
