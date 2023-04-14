@@ -85,7 +85,7 @@ torch.manual_seed(args.seed)
 if args.cuda:
     torch.cuda.manual_seed(args.seed)
 
-args.model_dir='./saved_model/save_{}_model_com3'.format(args.dataset)
+#args.model_dir='./saved_model/save_{}_model_com3'.format(args.dataset)
     
 # nn layers
 p1 = re.compile(r'[[](.*?)[]]', re.S)
