@@ -1,6 +1,6 @@
-# HNF-DTI: Heterogeneous Network Framework for Drug-Target Interaction Prediction
+# MHNF-DTI: Heterogeneous Network Framework for Drug-Target Interaction Prediction
 
-This repository provides the implementation of our paper: "[HNF-DTI: Heterogeneous Network Framework for Drug-Target Interaction Prediction]" .
+This repository provides the implementation of our paper: "[MHNF-DTI: Multi-domain based Heterogeneous Network Framework for Drug-Target Interaction Prediction]" .
 
 <p align='center'>
     <img src="pipeline.png", width="640">
